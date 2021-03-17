@@ -3,6 +3,11 @@
 текст #2196F3, #757575
 фон кнопки #2196F3 */
 
+
+/* box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);  - тень активной карточки  */
+
+
+
 :root {
   --opp-color: #ffffff;
   --сurrent-color: #2196f3;
@@ -11,6 +16,7 @@
   --button-fill-color: #f5f4fa;
   --inactive-partner: #afb1b8;
   --header-border-color: #ECECEC;
+  --black-color: #212121
 }
 
 /* CONTAINER  */
@@ -98,15 +104,21 @@ img {
   margin-right: 10px;
 }
 
-.footer-link {
+.contact-link {
   display: flex;
   align-items: center;
   color: var(--alt-color);
+  /* transition-property: color; 
+  transition-duration: 250ms; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+ 
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
-.footer-link:hover,
-.footer-link:focus {
+.contact-link:hover,
+.contact-link:focus {
   color: var(--сurrent-color);
+
 }
 
 .header-logo {
@@ -143,7 +155,7 @@ img {
 /* MAIN-PAGE   */
 
 .main-page {
-  color: #212121;
+  color: var(--black-color);
   font-family: "Roboto", "Verdana", "Tahoma", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -151,7 +163,9 @@ img {
 }
 
 .link {
-  color: #212121;
+  color: var(--black-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ; ;
 }
 
 .link:hover,
@@ -336,23 +350,26 @@ img {
   margin-right: 0px;
 }
 
+.round-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  
+  border-radius: 50% 50%;
+  color: var(--inactive-partner);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+
+}
+
 .round-button:hover,
 .round-button:active {
   background-color: var(--сurrent-color);
   color: var(--opp-color);
-}
-
-.round-button {
-  width: 44px;
-  height: 44px;
-
-  display: flex;
-  border-radius: 50% 50%;
-  color: var(--inactive-partner);
-
-  /* outline: 1px solid brown; */
-  justify-content: center;
-  align-items: center;
 }
 
 .social {
@@ -395,17 +412,15 @@ img {
 
   box-shadow: 0 0 0 1px var(--inactive-partner);
   border-radius: 4px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 
 .svg-link:hover,
 .svg-link:focus {
   color: var(--сurrent-color);
-}
-
-.svg-link:hover,
-.svg-link:focus {
   box-shadow: 0 0 0 1px var(--сurrent-color);
-  border: 0px solid var(--inactive-partner);
+
 }
 
 /* FOOTER  */
@@ -459,7 +474,7 @@ img {
 /* PORTFOLIO  */
 
 .portfolio-page {
-  color: #212121;
+  color: var(--black-color)
   font-family: "Roboto", "Verdana", "Tahoma", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -483,7 +498,7 @@ img {
 
 
 .portfolio:hover,
-.link:focus {
+.portfolio:focus {
   color: var(--opp-color);
   background-color: var(--сurrent-color);
 }
@@ -544,6 +559,18 @@ img {
   border: 1px solid #eeeeee;
   padding: 20px 24px;
 }
+
+.card-item-link {
+  display: inline-block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+.card-item-link:hover, 
+.card-item-link:focus  {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.12), 0px 40px 40px rgba(0, 0, 0, 0.06), 10px 40px 60px rgba(0, 0, 0, 0.16);
+}
+
 
 /* .card-thumb {
     outline: 1px solid navy;
