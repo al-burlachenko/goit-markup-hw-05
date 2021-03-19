@@ -100,6 +100,7 @@ img {
   background-color: var(--opp-color);
   position: sticky;
   top: -1px;
+  z-index: 1;
 }
 
 .header-nav,
