@@ -100,7 +100,7 @@ img {
   background-color: var(--opp-color);
   position: sticky;
   top: -1px;
-  z-index: 1;
+  z-index: 0.9;
 }
 
 .header-nav,
@@ -633,6 +633,8 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  z-index: 1;
 }
 
 .modal {
